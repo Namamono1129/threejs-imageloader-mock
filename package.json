@@ -1,0 +1,27 @@
+{
+  "name": "threejs-imageloader-mock",
+  "version": "0.0.1",
+  "description": "Mocking THREE.ImageLoader (WIP)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Namamono1129/threejs-imageloader-mock.git"
+  },
+  "keywords": [
+    "three.js",
+    "node",
+    "mock",
+    "test"
+  ],
+  "author": "namamono1129",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Namamono1129/threejs-imageloader-mock/issues"
+  },
+  "homepage": "https://github.com/Namamono1129/threejs-imageloader-mock#readme",
+  "devDependencies": {
+  }
+}
