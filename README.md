@@ -67,3 +67,6 @@ ImageElementMock {
 ```
 
 `src` and `crossOrigin` property will be added by `THREE.ImageLoader.load()` method, which can be made use of test.
+
+## License
+MIT
