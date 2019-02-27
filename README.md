@@ -26,9 +26,9 @@ const assert = require('assert');
 
 describe('App test', () => {
 
-  it('Can mock image loading', (done) => {
+  it('Can mock image loading', ( done ) => {
     imgMock.success();
-    const onLoad = (texture) => {
+    const onLoad = ( texture ) => {
       console.log(texture); // Prints Mock object
       assert.equal(texture.src, 'http://0.0.0.0/foo/bar');
       assert.equal(texture.constructor.name, 'ImageElementMock');
@@ -38,7 +38,7 @@ describe('App test', () => {
     new THREE.ImageLoader().load('http://0.0.0.0/foo/bar', onLoad);
   });
 
-  it('Can intercept with error', (done) => {
+  it('Can intercept with error', ( done ) => {
     imgMock.fail();
     const onLoad = () => {
       assert.fail();
