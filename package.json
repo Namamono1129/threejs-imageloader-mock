@@ -1,6 +1,6 @@
 {
   "name": "threejs-imageloader-mock",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Mocking THREE.ImageLoader (WIP)",
   "main": "lib/index.js",
   "scripts": {
