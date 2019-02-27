@@ -68,5 +68,8 @@ ImageElementMock {
 
 `src` and `crossOrigin` property will be added by `THREE.ImageLoader.load()` method, which can be made use of test.
 
+## Warning
+This module does not ensure valid function of your WebGL program. Please make sure that it can cause some problems.
+
 ## License
 MIT
