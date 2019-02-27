@@ -1,8 +1,8 @@
 {
   "name": "threejs-imageloader-mock",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Mocking THREE.ImageLoader (WIP)",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,5 +23,9 @@
   },
   "homepage": "https://github.com/Namamono1129/threejs-imageloader-mock#readme",
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/preset-env": "^7.3.4"
   }
 }
