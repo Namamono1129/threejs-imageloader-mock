@@ -1,6 +1,6 @@
-const activate = function () {
+const originalFunc = document.createElementNS;
 
-  const originalFunc = document.createElementNS;
+const activate = function ( trigger ) {
 
   document.createElementNS = function ( url, tag ) {
 
@@ -8,7 +8,7 @@ const activate = function () {
       return originalFunc.bind( document, url, tag );
     }
 
-    return new ImageElementMock();
+    return new ImageElementMock( trigger );
 
   }
 
@@ -17,13 +17,28 @@ const activate = function () {
 
 class ImageElementMock {
 
+  constructor( trigger ) {
+    this.trigger = trigger;
+  }
+
   addEventListener( type, listener ) {
 
-    if ( type != 'load' ) {
+    if ( type != this.trigger ) {
       return;
     }
 
-    setTimeout(() => { listener(this) }, 0)
+    // Func calls need little timeout in order to ensure load() function to return value
+    if ( type == 'load' ) {
+      setTimeout(() => {
+        listener.call(this);
+      }, 0);
+    } else if ( type == 'error' ){
+      setTimeout(() => {
+        listener(new Error("An error occurred on loading image."));
+      }, 0);
+    } else {
+      throw new Error("Program Error: this may be a bug on threejs-imageloader-mock.");
+    }
 
   }
 
@@ -32,4 +47,11 @@ class ImageElementMock {
 
 }
 
-module.exports = activate;
+module.exports = {
+  success: function() {
+    activate('load');
+  },
+  fail: function() {
+    activate('error');
+  }
+}
